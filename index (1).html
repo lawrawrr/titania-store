@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TITANIA — cincin titanium kekinian untuk menemani setiap versi dirimu.">
+  <meta name="theme-color" content="#fff8f3">
+  <title>TITANIA — Your Everyday Shine</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+    :root{--ink:#29242a;--muted:#777078;--cream:#fff8f3;--pink:#f7d9df;--rose:#d9869b;--lilac:#e9e1f7;--line:#eee5e3;--white:#fff;--shadow:0 18px 50px rgba(74,45,57,.09)}
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",Arial,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
+    .announcement{text-align:center;background:#302832;color:#fff;padding:9px 16px;font-size:11px;letter-spacing:1.2px}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,248,243,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(238,229,227,.8)}
+    .nav{max-width:1160px;margin:auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-size:23px;font-weight:800;letter-spacing:3px}.brand span{color:var(--rose)}
+    .brand small{display:block;font-size:8px;letter-spacing:3px;color:var(--muted);font-weight:600;margin-top:-5px}
+    .navlinks{display:flex;gap:27px;font-size:12px;font-weight:700;color:#625b63}
+    .navlinks a:hover{color:var(--rose)}
+    .cart-btn,.btn{border:0;border-radius:999px;padding:12px 19px;background:var(--ink);color:#fff;font-size:12px;font-weight:700;transition:.2s}
+    .cart-btn:hover,.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+    .cart-count{display:inline-grid;place-items:center;background:var(--pink);color:var(--ink);width:19px;height:19px;border-radius:50%;margin-left:5px;font-size:10px}
+    .hero{max-width:1160px;margin:auto;padding:65px 24px 75px;display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+    .eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:800;color:#b66d82}
+    h1,h2,h3,p{margin-top:0}h1{font:800 clamp(43px,6vw,75px)/1.04 "Playfair Display",Georgia,serif;letter-spacing:-2px;margin:17px 0 20px}
+    h1 em{color:var(--rose);font-style:normal}
+    .hero-copy>p{max-width:440px;color:var(--muted);font-size:14px}
+    .hero-actions{display:flex;gap:12px;align-items:center;margin-top:28px;flex-wrap:wrap}
+    .btn.secondary{background:transparent;color:var(--ink);border:1px solid #d9cdd0}
+    .tiny-note{font-size:10px;color:var(--muted);margin-top:22px}
+    .hero-art{min-height:430px;border-radius:48% 48% 28px 28px;background:linear-gradient(145deg,#f5dce3,#e9e1f7 65%,#f9eee8);position:relative;display:grid;place-items:center;overflow:hidden}
+    .hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.6);border-radius:50%;width:330px;height:330px}
+    .hero-art:after{width:410px;height:410px}
+    .ring-art{width:205px;height:205px;border:25px solid #d9d8dc;border-right-color:#fff;border-bottom-color:#aaa9af;border-radius:50%;transform:rotate(-27deg);box-shadow:inset 8px 5px 12px #fff,12px 20px 35px #8d7c8c66;position:relative;z-index:2}
+    .ring-art:after{content:"";position:absolute;inset:9px;border:2px solid #fff;border-radius:50%;opacity:.8}
+    .spark{position:absolute;color:white;font-size:30px;z-index:3}.s1{top:17%;left:20%}.s2{right:18%;top:27%;font-size:22px}.s3{bottom:18%;left:22%;font-size:18px}
+    .art-label{position:absolute;bottom:25px;right:25px;background:#ffffffc9;padding:12px 17px;border-radius:15px;font-size:10px;letter-spacing:1px;z-index:4}
+    .trust-strip{background:#fff;padding:20px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .trust-inner{max-width:1080px;margin:auto;display:flex;justify-content:space-around;gap:18px;flex-wrap:wrap;color:#6e626b;font-size:11px;font-weight:700}
+    .trust-inner span{display:flex;gap:8px;align-items:center}.trust-inner b{color:#bc788b;font-size:16px}
+    section{padding:78px 24px}.section-inner{max-width:1100px;margin:auto}
+    .section-head{text-align:center;margin-bottom:36px}.section-head h2{font:700 clamp(30px,4vw,43px) "Playfair Display",Georgia,serif;margin:9px 0}.section-head p{font-size:13px;color:var(--muted);margin:0}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .product-card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:.25s}
+    .product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .product-visual{height:245px;display:grid;place-items:center;position:relative;overflow:hidden}
+    .product-visual.pink{background:#f8e9eb}.product-visual.lilac{background:#eee9f7}.product-visual.sand{background:#f3e9dc}
+    .mini-ring{width:118px;height:118px;border:15px solid #d4d4d8;border-top-color:#fff;border-left-color:#aaa9ae;border-radius:50%;transform:rotate(-30deg);box-shadow:8px 14px 24px #65545a44,inset 4px 4px 8px #fff;position:relative}
+    .mini-ring.gold{border-color:#d8b879;border-top-color:#fff0c8;border-left-color:#aa854a}
+    .mini-ring.black{border-color:#55545b;border-top-color:#aaa9af;border-left-color:#292830}
+    .mini-ring:after{content:"";position:absolute;inset:5px;border:1px solid #ffffffa8;border-radius:50%}
+    .product-tag{position:absolute;top:16px;left:16px;background:#fff;border-radius:30px;padding:6px 11px;font-size:9px;font-weight:800;letter-spacing:.8px}
+    .product-info{padding:19px}.product-info h3{font-size:16px;margin:0 0 5px}.product-info p{font-size:11px;color:var(--muted);min-height:36px;margin-bottom:13px}
+    .product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px}.price{font-weight:800;font-size:15px}.add{border:0;background:var(--pink);color:#4b3039;border-radius:50px;padding:10px 14px;font-size:10px;font-weight:800}.add:hover{background:#efc2ce}
+    .about{background:#f4edf7}.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}
+    .about-art{min-height:300px;border-radius:25px;background:linear-gradient(135deg,#f6dce3,#e5def5);display:grid;place-items:center;font-size:75px}
+    .about-copy h2{font:700 39px "Playfair Display",Georgia,serif;margin:10px 0}.about-copy p{font-size:13px;color:#6d6470}
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}.value{background:#ffffffb8;border-radius:14px;padding:14px;font-size:10px}.value strong{display:block;font-size:12px;margin-bottom:4px}
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.review{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}.stars{color:#d99b58;letter-spacing:2px;font-size:13px}.review p{font-size:12px;color:#625b63;margin:12px 0}.review strong{font-size:11px}.review small{display:block;color:#999;font-size:9px}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.faq{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px}.faq h3{font-size:12px;margin:0 0 7px}.faq p{font-size:11px;color:var(--muted);margin:0}
+    .contact{background:#302832;color:#fff}.contact .section-head p{color:#d0c5ce}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}.contact p{font-size:12px;color:#d0c5ce}.contact-card{background:#413743;border:1px solid #594c5b;border-radius:18px;padding:22px}.contact-card a{color:#f4c8d3}.contact-card strong{display:block;font-size:12px;margin:8px 0 3px}
+    .policy{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.policy article{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}.policy h3{font-size:12px;margin:0 0 7px}.policy p{font-size:10px;color:var(--muted);margin:0}
+    footer{background:#211d23;color:#bdb3bd;padding:25px 24px;font-size:10px}.footer-inner{max-width:1100px;margin:auto;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .modal-backdrop{position:fixed;inset:0;background:#211d2388;z-index:50;display:none;justify-content:flex-end}.modal-backdrop.show{display:flex}
+    .cart-panel{background:#fff8f3;width:min(420px,100%);height:100%;padding:25px;overflow:auto;box-shadow:-15px 0 40px #0002}
+    .cart-head{display:flex;justify-content:space-between;align-items:center}.cart-head h2{font:700 25px "Playfair Display",Georgia,serif}
+    .close{border:0;background:#f1e5e8;border-radius:50%;width:34px;height:34px;font-size:18px}
+    .cart-item{display:flex;justify-content:space-between;gap:10px;padding:15px 0;border-bottom:1px solid var(--line);font-size:12px}
+    .qty{display:flex;align-items:center;gap:9px}.qty button{border:0;border-radius:50%;width:23px;height:23px;background:var(--pink)}
+    .cart-total{display:flex;justify-content:space-between;font-weight:800;margin:22px 0}
+    .empty{color:var(--muted);font-size:12px;padding:30px 0;text-align:center}
+    .checkout-note{font-size:10px;color:var(--muted);margin-top:12px}
+    @media(max-width:760px){.nav{padding:13px 17px}.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:45px;gap:35px}.hero-art{min-height:320px}.products{grid-template-columns:1fr 1fr}.about-grid,.contact-grid{grid-template-columns:1fr;gap:25px}.reviews{grid-template-columns:1fr}.policy{grid-template-columns:1fr 1fr}.faq-grid{grid-template-columns:1fr}.values{grid-template-columns:1fr 1fr}}
+    @media(max-width:460px){.products{grid-template-columns:1fr}.product-visual{height:220px}.policy{grid-template-columns:1fr 1fr}.trust-inner{justify-content:flex-start}.hero h1{font-size:48px}}
+  </style>
+</head>
+<body>
+  <div class="announcement">A LITTLE SHINE, A LOT OF YOU ✦ FREE SHIPPING* FOR YOUR FIRST ORDER</div>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#home">TITANIA<span>.</span><small>YOUR EVERYDAY SHINE</small></a>
+      <div class="navlinks"><a href="#home">HOME</a><a href="#shop">SHOP</a><a href="#about">ABOUT</a><a href="#reviews">REVIEWS</a><a href="#contact">CONTACT</a></div>
+      <button class="cart-btn" onclick="toggleCart(true)">Bag <span class="cart-count" id="cartCount">0</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">✦ Made for your every little moment</div>
+        <h1>Small ring.<br><em>Big energy.</em></h1>
+        <p>Temukan cincin titanium kekinian yang simpel, stylish, dan gampang dipadukan dengan outfit favoritmu. Karena setiap hari layak punya sedikit kilau.</p>
+        <div class="hero-actions"><a class="btn" href="#shop">EXPLORE THE RINGS ↗</a><a class="btn secondary" href="#about">Kenalan yuk</a></div>
+        <div class="tiny-note">♡ Desain versatile · Pilihan warna · Everyday accessories</div>
+      </div>
+      <div class="hero-art" aria-label="Ilustrasi cincin titanium">
+        <span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">✦</span>
+        <div class="ring-art"></div><div class="art-label">YOUR STYLE, YOUR STORY ♡</div>
+      </div>
+    </section>
+
+    <div class="trust-strip"><div class="trust-inner"><span><b>✧</b> Detail produk transparan</span><span><b>♡</b> Friendly customer care</span><span><b>⌂</b> Info pengiriman jelas</span><span><b>✓</b> Checkout aman* </span></div></div>
+
+    <section id="shop">
+      <div class="section-inner">
+        <div class="section-head"><div class="eyebrow">THE LITTLE THINGS</div><h2>Find your forever ring</h2><p>Tiga gaya, satu tujuan: bikin penampilanmu makin kamu.</p></div>
+        <div class="products">
+          <article class="product-card">
+            <div class="product-visual pink"><span class="product-tag">BESTIE'S PICK</span><div class="mini-ring"></div></div>
+            <div class="product-info"><h3>Cloud Silver</h3><p>Cincin silver minimalis dengan tampilan clean untuk daily look.</p><div class="product-bottom"><span class="price">Rp89.000</span><button class="add" onclick="addToCart('Cloud Silver',89000)">+ ADD TO BAG</button></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-visual lilac"><span class="product-tag">SO PRETTY</span><div class="mini-ring gold"></div></div>
+            <div class="product-info"><h3>Honey Glow</h3><p>Sentuhan warna gold yang manis untuk gaya hangat dan elegan.</p><div class="product-bottom"><span class="price">Rp99.000</span><button class="add" onclick="addToCart('Honey Glow',99000)">+ ADD TO BAG</button></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-visual sand"><span class="product-tag">COOL GIRL</span><div class="mini-ring black"></div></div>
+            <div class="product-info"><h3>Midnight Mood</h3><p>Warna gelap yang bold, cocok untuk look edgy dan effortless.</p><div class="product-bottom"><span class="price">Rp95.000</span><button class="add" onclick="addToCart('Midnight Mood',95000)">+ ADD TO BAG</button></div></div>
+          </article>
+        </div>
+        <p class="tiny-note" style="text-align:center">*Harga dan deskripsi di atas merupakan contoh untuk prototipe tugas. Sesuaikan dengan hasil riset pemasok dan harga pasar sebelum toko dipublikasikan.</p>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="section-inner about-grid">
+        <div class="about-art">💍✨</div>
+        <div class="about-copy"><div class="eyebrow">HELLO, LOVELY!</div><h2>A little story behind TITANIA</h2>
+          <p>TITANIA hadir sebagai konsep toko aksesori cincin titanium untuk kamu yang suka tampil ekspresif tanpa harus berlebihan. Kami percaya aksesori kecil bisa memberi sentuhan personal pada gaya sehari-hari.</p>
+          <p>Fokus kami adalah pilihan desain yang mudah dipadukan, informasi produk yang jelas, dan pengalaman belanja yang ramah. Pilih cincin yang paling terasa seperti dirimu!</p>
+          <div class="values"><div class="value"><strong>♡ Everyday style</strong>Gaya simpel untuk banyak momen.</div><div class="value"><strong>✦ Easy to mix</strong>Mudah dipadukan dengan outfit.</div><div class="value"><strong>☻ Friendly service</strong>Siap membantu sebelum membeli.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="section-inner"><div class="section-head"><div class="eyebrow">LOVE NOTES</div><h2>Kind words, happy hearts</h2><p>Area ulasan untuk pengalaman pembeli.</p></div>
+        <div class="reviews">
+          <article class="review"><div class="stars">★★★★★</div><p>“Modelnya simple dan gampang banget dipaduin sama outfit sehari-hari.”</p><strong>— Review contoh</strong><small>Ulasan demo, ganti dengan testimoni pembeli asli.</small></article>
+          <article class="review"><div class="stars">★★★★★</div><p>“Suka pilihan warnanya! Tampilannya manis dan nggak berlebihan.”</p><strong>— Review contoh</strong><small>Ulasan demo, ganti dengan testimoni pembeli asli.</small></article>
+          <article class="review"><div class="stars">★★★★★</div><p>“Adminnya ramah dan informasinya mudah dipahami.”</p><strong>— Review contoh</strong><small>Ulasan demo, ganti dengan testimoni pembeli asli.</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" style="padding-top:20px">
+      <div class="section-inner"><div class="section-head"><div class="eyebrow">GOOD TO KNOW</div><h2>Before you shine</h2></div>
+        <div class="faq-grid">
+          <article class="faq"><h3>Bagaimana memilih ukuran?</h3><p>Ukur lingkar jari menggunakan pita ukur/kertas, lalu konfirmasikan ukuran kepada admin sebelum checkout. Tambahkan tabel ukuran yang sudah diverifikasi toko.</p></article>
+          <article class="faq"><h3>Apakah warna dan bentuk bisa berbeda?</h3><p>Warna pada layar dapat sedikit berbeda dari produk asli. Foto produk asli dan detail bahan perlu ditampilkan sebelum transaksi.</p></article>
+          <article class="faq"><h3>Bagaimana cara merawat cincin?</h3><p>Simpan di tempat kering, bersihkan dengan kain lembut, dan hindari benturan atau paparan bahan kimia keras.</p></article>
+          <article class="faq"><h3>Apakah semua produk ready stock?</h3><p>Status stok perlu dikonfirmasi kepada admin. Jangan melakukan pembayaran sebelum ketersediaan dan detail pesanan disetujui.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:25px">
+      <div class="section-inner"><div class="section-head"><div class="eyebrow">SHOP WITH CLARITY</div><h2>Our store promises</h2><p>Informasi penting sebelum kamu melakukan pemesanan.</p></div>
+        <div class="policy">
+          <article><h3>📦 Pengiriman</h3><p>Pesanan diproses setelah pembayaran terkonfirmasi. Estimasi ongkir dan waktu tiba mengikuti kurir serta alamat tujuan dan diinformasikan sebelum pembayaran.</p></article>
+          <article><h3>↺ Retur & refund</h3><p>Hubungi admin maksimal 2×24 jam setelah paket diterima dengan video unboxing. Produk salah/rusak akan ditinjau untuk penggantian atau pengembalian dana sesuai kesepakatan.</p></article>
+          <article><h3>♡ Privasi</h3><p>Nama, alamat, dan nomor kontak hanya digunakan untuk memproses pesanan dan pengiriman. Data tidak dipublikasikan. Hapus data yang tidak lagi diperlukan.</p></article>
+          <article><h3>⌁ Pembayaran</h3><p>Metode yang direncanakan: transfer bank dan e-wallet. Detail rekening resmi diberikan admin saat konfirmasi. Periksa nama penerima sebelum transfer.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section-inner"><div class="section-head"><div class="eyebrow" style="color:#efb8c7">LET'S TALK</div><h2>Need a little help?</h2><p>Jangan ragu bertanya soal ukuran, stok, atau detail produk.</p></div>
+        <div class="contact-grid">
+          <div><p>Kami ingin pengalaman belanjamu terasa nyaman dari awal sampai akhir. Hubungi admin melalui kanal kontak resmi toko setelah data operasional dilengkapi.</p><p>Instagram: <a href="#" aria-label="Instagram toko">@titania.rings</a> (tautan demo)</p><p>Email: halo@titania.example (alamat contoh)</p></div>
+          <div class="contact-card"><strong>Customer care</strong><p>Senin–Sabtu · 09.00–17.00 WIB (jam operasional contoh)</p><strong>Identitas usaha</strong><p>TITANIA — toko aksesori cincin (prototipe tugas). Alamat, nama pemilik, dan NIB: lengkapi dengan data usaha yang benar sebelum beroperasi.</p><strong>Keamanan transaksi</strong><p>Gunakan hanya rekening/akun pembayaran resmi yang diumumkan melalui kanal toko.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="footer-inner"><span>© 2026 TITANIA. YOUR EVERYDAY SHINE.</span><span>Prototype toko online untuk tugas E-Commerce Lab · UIN Salatiga</span><a href="#home">Back to top ↑</a></div></footer>
+
+  <div class="modal-backdrop" id="cartBackdrop" onclick="if(event.target===this)toggleCart(false)">
+    <aside class="cart-panel" aria-label="Keranjang belanja">
+      <div class="cart-head"><h2>Your bag ♡</h2><button class="close" onclick="toggleCart(false)" aria-label="Tutup">×</button></div>
+      <div id="cartItems"><div class="empty">Your bag is waiting for a little sparkle ✨</div></div>
+      <div class="cart-total"><span>Total</span><span id="cartTotal">Rp0</span></div>
+      <button class="btn" style="width:100%" onclick="checkout()">LANJUTKAN PESANAN</button>
+      <p class="checkout-note">Fitur keranjang ini merupakan simulasi untuk prototipe. Lengkapi nomor WhatsApp, metode pembayaran, dan sistem checkout sebelum digunakan untuk transaksi sungguhan.</p>
+    </aside>
+  </div>
+
+  <script>
+    const cart = [];
+    const rupiah = n => new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(n);
+    function addToCart(name,price){
+      const item=cart.find(x=>x.name===name);
+      if(item)item.qty++;else cart.push({name,price,qty:1});
+      renderCart();
+      const count=document.getElementById('cartCount');
+      count.textContent=cart.reduce((s,x)=>s+x.qty,0);
+    }
+    function changeQty(name,delta){
+      const item=cart.find(x=>x.name===name);if(!item)return;
+      item.qty+=delta;if(item.qty<=0)cart.splice(cart.indexOf(item),1);
+      renderCart();document.getElementById('cartCount').textContent=cart.reduce((s,x)=>s+x.qty,0);
+    }
+    function renderCart(){
+      const wrap=document.getElementById('cartItems');
+      if(!cart.length){wrap.innerHTML='<div class="empty">Your bag is waiting for a little sparkle ✨</div>';}
+      else{wrap.innerHTML=cart.map(x=>`<div class="cart-item"><div><strong>${x.name}</strong><br><span>${rupiah(x.price)}</span></div><div class="qty"><button onclick="changeQty('${x.name}',-1)">−</button><b>${x.qty}</b><button onclick="changeQty('${x.name}',1)">+</button></div></div>`).join('');}
+      document.getElementById('cartTotal').textContent=rupiah(cart.reduce((s,x)=>s+x.price*x.qty,0));
+    }
+    function toggleCart(show){document.getElementById('cartBackdrop').classList.toggle('show',show);}
+    function checkout(){
+      if(!cart.length){alert('Keranjangmu masih kosong, bub!');return;}
+      const summary=cart.map(x=>`${x.name} x${x.qty} — ${rupiah(x.price*x.qty)}`).join('\\n');
+      alert('RINGKASAN PESANAN DEMO\\n\\n'+summary+'\\n\\nTotal: '+rupiah(cart.reduce((s,x)=>s+x.price*x.qty,0))+'\\n\\nIni masih prototipe. Tambahkan WhatsApp/payment gateway toko sebelum menerima pesanan sungguhan.');
+    }
+  </script>
+</body>
+</html>
